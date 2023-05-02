@@ -7,21 +7,22 @@ public class canvasManager : MonoBehaviour
 {
     public CharacterStats playerLink;
     public TextMeshProUGUI playerName;
+    public TextMeshProUGUI playerRizz;
     // Start is called before the first frame update
     void Start()
     {
         // Subscribing to the event
         playerLink.playerNameChange+=ChangeName;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        playerLink.playerRizzChange+=ChangeRizz;
     }
 
     public void ChangeName()
     {
         playerName.text = playerLink.currentName;
+    }
+
+    public void ChangeRizz()
+    {
+        playerRizz.text = $"Your rizz is {playerLink.rizzLevels} you fucking loser";
     }
 }

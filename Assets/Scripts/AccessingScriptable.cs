@@ -20,5 +20,10 @@ public class AccessingScriptable : MonoBehaviour
         {
             playerStats.currentName="Joseph the Rizzless";
         }
+
+        if(Input.GetKeyDown("b"))
+        {
+            playerStats.rizzLevels=-20;
+        }
     }
 }

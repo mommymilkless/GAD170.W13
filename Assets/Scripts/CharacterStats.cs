@@ -10,7 +10,17 @@ public class CharacterStats : ScriptableObject
     // enumerations baybey. Technically secret arrays lol
     public enum characterClasses {rizzard,warrior,rogue};
     public characterClasses currentClass;
-    public int rizzLevels;
+    
+    public int _rizzLevels;
+    public int rizzLevels
+    {
+        get{return _rizzLevels;}
+        set{
+            _rizzLevels = value;
+            playerRizzChange();
+        }
+    }
+    
     private string _currentName;
     public string currentName
     {
@@ -45,4 +55,5 @@ public class CharacterStats : ScriptableObject
     }
 
     public event Action playerNameChange;
+    public event Action playerRizzChange;
 }
