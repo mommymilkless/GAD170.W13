@@ -8,6 +8,7 @@ public class canvasManager : MonoBehaviour
     public CharacterStats playerLink;
     public TextMeshProUGUI playerName;
     public TextMeshProUGUI playerRizz;
+    public GameObject awardForJoe;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,5 +25,13 @@ public class canvasManager : MonoBehaviour
     public void ChangeRizz()
     {
         playerRizz.text = $"Your rizz is {playerLink.rizzLevels} you fucking loser";
+    }
+
+    void Update()
+    {
+        if(Input.GetKeyDown("c"))
+        {
+            awardForJoe.SetActive(true);
+        }
     }
 }
